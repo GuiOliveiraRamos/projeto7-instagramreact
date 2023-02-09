@@ -1,8 +1,13 @@
-export default function Stories() {
+export default function Posts() {
+
+    const post = [
+        { img: "assets/img/meowed.svg", text: "meowed", postImg: "assets/img/gato-telefone.svg", likeImg: "assets/img/respondeai.svg", likePage: "respondeai" },
+        { img: "assets/img/barked.svg", text: "barked", postImg: "assets/img/dog.svg", likeImg: "assets/img/adorable_animals.svg", likePage: "adorable_animals" }
+    ]
+
     return (
         <div class="posts">
-            <Post img="assets/img/meowed.svg" text="meowed" postImg="assets/img/gato-telefone.svg" likeImg="assets/img/respondeai.svg" likePage="respondeai" />
-            <Post img="assets/img/barked.svg" text="barked" postImg="assets/img/dog.svg" likeImg="assets/img/adorable_animals.svg" likePage="adorable_animals" />
+            {post.map((p) => <Post img={p.img} text={p.text} postImg={p.postImg} likeImg={p.likeImg} likePage={p.likePage} />)}
         </div>
     )
 }
