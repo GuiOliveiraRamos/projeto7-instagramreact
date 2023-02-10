@@ -1,14 +1,19 @@
+import { useState } from "react";
 import Sugestoes from "./sugestoes";
 
 export default function Sidebar() {
+
+    const initialName = "catanacomics"
+    const [name, setName] = useState(initialName)
+
     return (
         <div class="sidebar">
             <div class="usuario">
                 <img src="assets/img/catanacomics.svg" alt="imagem de perfil" />
                 <div class="texto">
                     <span>
-                        <strong>catanacomics</strong>
-                        <ion-icon name="pencil"></ion-icon>
+                        <strong>{name}</strong>
+                        <ion-icon onClick={changeName} name="pencil"></ion-icon>
                     </span>
                 </div>
             </div>
@@ -23,5 +28,13 @@ export default function Sidebar() {
             </div>
         </div>
     )
+
+    function changeName() {
+
+        const newName = prompt("Digite um novo nome de usuário abaixo: ")
+        setName(newName)
+
+    }
+
 }
 

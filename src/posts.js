@@ -2,7 +2,8 @@ export default function Posts() {
 
     const post = [
         { img: "assets/img/meowed.svg", text: "meowed", postImg: "assets/img/gato-telefone.svg", likeImg: "assets/img/respondeai.svg", likePage: "respondeai" },
-        { img: "assets/img/barked.svg", text: "barked", postImg: "assets/img/dog.svg", likeImg: "assets/img/adorable_animals.svg", likePage: "adorable_animals" }
+        { img: "assets/img/barked.svg", text: "barked", postImg: "assets/img/dog.svg", likeImg: "assets/img/adorable_animals.svg", likePage: "adorable_animals" },
+        { img: "assets/img/meowed.svg", text: "test", postImg: "assets/img/gato-telefone.svg", likeImg: "assets/img/respondeai.svg", likePage: "respondeai" }
     ]
 
     return (
