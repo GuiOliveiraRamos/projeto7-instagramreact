@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 export default function Posts() {
 
     const post = [
@@ -15,6 +17,10 @@ export default function Posts() {
 
 
 function Post(props) {
+
+const [save, setSave] = useState(false)
+const [like, setLike] = useState(false)
+
     return (
         <div class="post">
             <div class="topo">
@@ -28,18 +34,18 @@ function Post(props) {
             </div>
 
             <div class="conteudo">
-                <img src={props.postImg} alt="gato-telefone" />
+                <img onDoubleClick ={setLike} src={props.postImg} alt="gato-telefone" />
             </div>
 
             <div class="fundo">
                 <div class="acoes">
                     <div>
-                        <ion-icon name="heart-outline"></ion-icon>
+                        <ion-icon onClick ={() => setLike(!like)} class = {!like ? "normal" : "vermelho"} name={!like ? "heart-outline" : "heart"}></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <div>
-                        <ion-icon name="bookmark-outline"></ion-icon>
+                        <ion-icon onClick= {() => setSave(!save)}name={!save ? "bookmark-outline" : "bookmark"}></ion-icon>
                     </div>
                 </div>
 

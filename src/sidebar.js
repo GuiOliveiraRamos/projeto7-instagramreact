@@ -6,10 +6,13 @@ export default function Sidebar() {
     const initialName = "catanacomics"
     const [name, setName] = useState(initialName)
 
+    const initialImage = "assets/img/catanacomics.svg"
+    const [img, setImg] = useState(initialImage)
+
     return (
         <div class="sidebar">
             <div class="usuario">
-                <img src="assets/img/catanacomics.svg" alt="imagem de perfil" />
+                <img onClick = {changeImg} src={img} alt="imagem de perfil" />
                 <div class="texto">
                     <span>
                         <strong>{name}</strong>
@@ -33,6 +36,13 @@ export default function Sidebar() {
 
         const newName = prompt("Digite um novo nome de usuário abaixo: ")
         setName(newName)
+
+    }
+
+    function changeImg() {
+
+        const newImg = prompt("Insira uma nova imagem: ")
+        setImg(newImg)
 
     }
 
