@@ -31,6 +31,15 @@ function Post(props) {
         }
     }
 
+    const doubleLikes = () => {
+
+        if (!like) {
+            setLike(true)
+            setContador(contador + 1)
+        }
+
+    }
+
     return (
         <div data-test="post" class="post">
             <div className="topo">
@@ -44,7 +53,7 @@ function Post(props) {
             </div>
 
             <div className="conteudo">
-                <img data-test="post-image" onClick={setLike} onDoubleClick={setLike} src={props.postImg} alt="gato-telefone" />
+                <img data-test="post-image" onDoubleClick={doubleLikes} src={props.postImg} alt="gato-telefone" />
             </div>
 
             <div className="fundo">
