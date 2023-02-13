@@ -44,7 +44,7 @@ function Post(props) {
             </div>
 
             <div className="conteudo">
-                <img data-test="post-image" onDoubleClick={setLike} src={props.postImg} alt="gato-telefone" />
+                <img data-test="post-image" onClick={setLike} onDoubleClick={setLike} src={props.postImg} alt="gato-telefone" />
             </div>
 
             <div className="fundo">
