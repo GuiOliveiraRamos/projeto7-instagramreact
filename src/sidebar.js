@@ -9,14 +9,44 @@ export default function Sidebar() {
     const initialImage = "assets/img/catanacomics.svg"
     const [img, setImg] = useState(initialImage)
 
+    function changeImg() {
+
+        let newImg = prompt("Insira uma nova imagem: ")
+        if (newImg !== null && newImg !== undefined && newImg !== "") {
+
+            setImg(newImg)
+
+        } else {
+
+            setImg(initialImage)
+
+        }
+
+    }
+
+    function changeName() {
+
+        const newName = prompt("Digite um novo nome de usuário abaixo: ")
+        if (newName !== null && newName !== undefined && newName !== "") {
+
+            setName(newName)
+
+        } else {
+
+            setName(initialName)
+
+        }
+
+    }
+
     return (
         <div class="sidebar">
             <div class="usuario">
-                <img data-test ="profile-image" onClick = {changeImg} src={img} alt="imagem de perfil" />
+                <img data-test="profile-image" onClick={changeImg} src={img} alt="imagem de perfil" />
                 <div class="texto">
                     <span>
-                        <strong data-test= "name">{name}</strong>
-                        <ion-icon data-test = "edit-name" onClick={changeName} name="pencil"></ion-icon>
+                        <strong data-test="name">{name}</strong>
+                        <ion-icon data-test="edit-name" onClick={changeName} name="pencil"></ion-icon>
                     </span>
                 </div>
             </div>
@@ -32,19 +62,8 @@ export default function Sidebar() {
         </div>
     )
 
-    function changeName() {
-
-        const newName = prompt("Digite um novo nome de usuário abaixo: ")
-        setName(newName)
-
-    }
-
-    function changeImg() {
-
-        const newImg = prompt("Insira uma nova imagem: ")
-        setImg(newImg)
-
-    }
-
 }
+
+
+
 

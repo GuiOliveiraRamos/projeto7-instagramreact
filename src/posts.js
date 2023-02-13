@@ -18,40 +18,40 @@ export default function Posts() {
 
 function Post(props) {
 
-const [save, setSave] = useState(false)
-const [like, setLike] = useState(false)
+    const [save, setSave] = useState(false)
+    const [like, setLike] = useState(false)
 
     return (
-        <div data-test ="post"class="post">
-            <div class="topo">
-                <div class="usuario">
+        <div data-test="post" class="post">
+            <div className="topo">
+                <div className="usuario">
                     <img src={props.img} alt={props.text} />
                     {props.text}
                 </div>
-                <div class="acoes">
+                <div className="acoes">
                     <ion-icon name="ellipsis-horizontal"></ion-icon>
                 </div>
             </div>
 
-            <div class="conteudo">
-                <img data-test ="post-image"onDoubleClick ={setLike} src={props.postImg} alt="gato-telefone" />
+            <div className="conteudo">
+                <img data-test="post-image" onDoubleClick={setLike} src={props.postImg} alt="gato-telefone" />
             </div>
 
-            <div class="fundo">
-                <div class="acoes">
+            <div className="fundo">
+                <div className="acoes">
                     <div>
-                        <ion-icon data-test="like-post" onClick ={() => setLike(!like)} class = {!like ? "normal" : "vermelho"} name={!like ? "heart-outline" : "heart"}></ion-icon>
+                        <ion-icon data-test="like-post" onClick={() => setLike(!like)} class={!like ? "normal" : "vermelho"} name={!like ? "heart-outline" : "heart"}></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <div>
-                        <ion-icon data-test= "save-post"onClick= {() => setSave(!save)}name={!save ? "bookmark-outline" : "bookmark"}></ion-icon>
+                        <ion-icon data-test="save-post" onClick={() => setSave(!save)} name={!save ? "bookmark-outline" : "bookmark"}></ion-icon>
                     </div>
                 </div>
 
-                <div class="curtidas">
+                <div className="curtidas">
                     <img src={props.likeImg} alt="respondeai" />
-                    <div class="texto">
+                    <div className="texto">
                         Curtido por <strong>{props.likePage}</strong> e <strong>outras 101.523 pessoas</strong>
                     </div>
                 </div>

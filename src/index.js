@@ -3,10 +3,11 @@ import Navbar from './navbar';
 import Stories from './stories';
 import Posts from './posts';
 import Sidebar from './sidebar';
+import React from 'react';
 
 function App() {
     return (
-        <div class="root">
+        <React.Fragment>
             <Navbar />
             <div class="corpo">
                 <div class="esquerda">
@@ -15,7 +16,7 @@ function App() {
                 </div>
                 <Sidebar />
             </div>
-        </div>
+        </React.Fragment>
     )
 }
 
